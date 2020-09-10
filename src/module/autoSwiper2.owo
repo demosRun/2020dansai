@@ -1,0 +1,187 @@
+<template lang="pug">
+.auto-swiper-2
+  ul.edit
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    li
+      img(src="@|show-2.png|" width="300" height="170")
+      p 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+  .swiper-container
+    .swiper-wrapper
+  .pagination
+  img.left(src="@|left.png|" o-tap="this.data.swiper.swipePrev()")
+  img.right(src="@|right.png|" o-tap="this.data.swiper.swipeNext()")
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      swiper: null
+    },
+    created: function () {
+      // 自动生成slider
+      const editList = this.queryAll('.edit li')
+      let newHtml = '<div class="swiper-slide"><ul>'
+      for (let index = 0; index < editList.length; index++) {
+        const element = editList[index];
+        if (index != 0 && index % 6 == 0 && index != editList.length - 1) {
+          newHtml += '</ul></div><div class="swiper-slide"><ul>'
+        }
+        newHtml += element.outerHTML
+      }
+      newHtml += '</ul></div>'
+      this.query('.swiper-wrapper').innerHTML = newHtml
+      // console.log(newHtml)
+      // 轮播图展示区域swiper
+      setTimeout(() => {
+        if (editList.length < 6) {
+          this.query('.pagination').style.display = 'none'
+          this.query('.left').style.display = 'none'
+          this.query('.right').style.display = 'none'
+          this.query('.swiper-container').style.height = 'auto'
+          return
+        }
+        this.data.swiper = new Swiper(this.query('.swiper-container'), {
+          pagination: this.query('.pagination'),
+          loop: true,
+          // autoplay: 5000,
+          paginationClickable: true
+        })
+        
+        setTimeout(() => {
+          // 分页器数字
+          const paginList = this.queryAll('.pagination .swiper-pagination-switch')
+          for (let index = 0; index < paginList.length; index++) {
+            const element = paginList[index];
+            element.innerText = index + 1
+          }
+        }, 100);
+      }, 0)
+    }
+  }
+</script>
+
+
+<style lang="less">
+.auto-swiper-2 {
+  position: relative;
+}
+.edit {
+  display: none;
+}
+.swiper-container {
+  width: 1000px;
+  height: 520px;
+}
+ul:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+li {
+  width: 300px;
+  height: 225px;
+  float: left;
+  border-radius: 15px;
+  margin: 15px 16px;
+  img {
+    display: block;
+    width: 100%;
+    height: 170px;
+  }
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    line-height: 60px;
+  }
+  p {
+    color: #333;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
+    height: 48px;
+    overflow: hidden;
+  }
+}
+.swiper-pagination-switch {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  display: inline-block;
+  border: 1px solid #154fa2;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #154fa2;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+.swiper-active-switch {
+  background-color: #154fa2;
+  color: white;
+}
+.left {
+  position: absolute;
+  bottom: 6px;
+  left: 300px;
+  cursor: pointer;
+}
+.right {
+  position: absolute;
+  bottom: 6px;
+  right: 300px;
+  cursor: pointer;
+}
+</style>

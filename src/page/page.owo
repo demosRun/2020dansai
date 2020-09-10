@@ -44,23 +44,50 @@
       .tab-bar
         .tab-item 9月12日上午主论坛
         .tab-item 9月12日下午分论坛
-      ul.tab-box
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
-        li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+      .tab-box
+        ul.tab-box-item
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+        ul.tab-box-item
+          li 11:00-12:00      文案文案文2222222222案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
+          li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
     //- 高清大图
     .title.panel(style="background-image: url(@|title-2.png|);")
     plug.panel(_name="module79" _src="https://template.owo.ink/f0c693dcb50fecf7.owo")
     //- 嘉宾观点
     .title.panel(style="background-image: url(@|title-3.png|);")
+    .swiper-show-1
+      plug.panel(_name="autoSwiper" _src="./src/module/autoSwiper.owo")
+    //- 案例展示
+    .title.panel(style="background-image: url(@|title-6.png|);")
+    .tab-panel-2.panel
+      .tab-item 企业优秀案例
+      .tab-item 消费、电商优秀案例
+      .tab-item 志愿者优秀案例
+      .tab-item 社会组织优秀案例
+    .tab-box-2.panel
+      plug.tab-box-item(_name="autoSwiper2" _src="./src/module/autoSwiper2.owo")
+      plug.tab-box-item(_name="autoSwiper2" _src="./src/module/autoSwiper2.owo")
+      plug.tab-box-item(_name="autoSwiper2" _src="./src/module/autoSwiper2.owo")
+      plug.tab-box-item(_name="autoSwiper2" _src="./src/module/autoSwiper2.owo")
     //- 图文直播
     .title.panel(style="background-image: url(@|title-4.png|);")
     //- img.panel.show-1(src="@|show-1.png|")
@@ -98,7 +125,9 @@
 <script>
   module.exports = {
     created: function () {
-      console.log('s')
+      // 注册tab
+      tab(this.queryAll('.tab-panel .tab-item'), this.queryAll('.tab-box .tab-box-item'))
+      tab(this.queryAll('.tab-panel-2 .tab-item'), this.queryAll('.tab-box-2 .tab-box-item'))
     }
   }
 </script>
@@ -169,17 +198,21 @@
     margin: 0 10px;
     display: inline-block;
   }
-  .tab-box {
+  .tab-box-item {
     width: 650px;
     margin: 0 auto;
     margin-top: 20px;
     height: 300px;
     overflow: auto;
     li {
-      font-size: 18px;
+      font-size: 22px;
       color: #1d1d1d;
-      line-height: 32px;
+      line-height: 36px;
     }
+  }
+  .active {
+    background-color: #24529c;
+    color: white;
   }
 }
 .show-1 {
@@ -200,5 +233,25 @@ iframe {
 }
 #copyright {
   margin-top: 60px;
+}
+.tab-panel-2 {
+  text-align: center;
+  .tab-item {
+    width: 212px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #2868c4;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #2868c4;
+    display: inline-block;
+    margin: 0 8px;
+    cursor: pointer;
+  }
+  .active {
+    color: white;
+    background-color: #2868c4;
+  }
 }
 </style>

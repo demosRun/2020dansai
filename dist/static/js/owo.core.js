@@ -1,4 +1,4 @@
-// Wed Sep 09 2020 16:34:55 GMT+0800 (GMT+08:00)
+// Thu Sep 10 2020 10:33:02 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {
@@ -194,7 +194,7 @@ _owo.addEvent = function (tempDom, moudleScript) {
                 break;
             }
             break
-          }   
+          }
           default: {
             
             _owo.bindEvent(eventName, eventFor, tempDom, moudleScript)
