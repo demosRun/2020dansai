@@ -40,6 +40,7 @@
           li
             a(href="#") 标题标题标题标题标题标题标题标题
     .title.panel(style="background-image: url(@|title-1.png|);")
+    <a name="hyyc"></a>
     .tab-panel.panel
       .tab-bar
         .tab-item 9月12日上午主论坛
@@ -70,13 +71,16 @@
           li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
           li 11:00-12:00      文案文案文案文案文案文案文案文案文案文案
     //- 高清大图
+    <a name="gqdt"></a>
     .title.panel(style="background-image: url(@|title-2.png|);")
     plug.panel(_name="module79" _src="https://template.owo.ink/f0c693dcb50fecf7.owo")
     //- 嘉宾观点
+    <a name="jbgd"></a>
     .title.panel(style="background-image: url(@|title-3.png|);")
     .swiper-show-1
       plug.panel(_name="autoSwiper" _src="./src/module/autoSwiper.owo")
     //- 案例展示
+    <a name="alzs"></a>
     .title.panel(style="background-image: url(@|title-6.png|);")
     .tab-panel-2.panel
       .tab-item 企业优秀案例
@@ -89,10 +93,12 @@
       plug.tab-box-item(_name="autoSwiper2" _src="./src/module/autoSwiper2.owo")
       plug.tab-box-item(_name="autoSwiper2" _src="./src/module/autoSwiper2.owo")
     //- 图文直播
+    <a name="twzb"></a>
     .title.panel(style="background-image: url(@|title-4.png|);")
     //- img.panel.show-1(src="@|show-1.png|")
     iframe.panel(src="http://live01.people.com.cn/zhibo/Myapp/Html/Member/html/201712/100718_104466_5a24b64dd5c94_quan.html")
     //- 相关报道
+    <a name="xgwz"></a>
     .title.panel(style="background-image: url(@|title-5.png|);")
     .news-lf-box.panel.clear
       .fl

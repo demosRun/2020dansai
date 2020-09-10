@@ -66,11 +66,6 @@ li {
   text-decoration: none;
 }
 
-.nav a:hover {
-  color: #c00;
-  text-decoration: underline;
-}
-
 .nav,
 .nav a:link,
 .nav a:visited,
@@ -87,7 +82,12 @@ li {
 }
 
 .nav a {
-  margin: 0 10px;
+  padding: 0 14px;
+}
+
+.nav a:hover {
+  color: #0f3677;
+  background-color: white;
 }
 .swiper-box {
   height: 390px;

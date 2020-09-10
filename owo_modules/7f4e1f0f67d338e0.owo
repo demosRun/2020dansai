@@ -1,11 +1,11 @@
 <template>
   <div class="nav clearfix">
-    <a href="" target="_blank">会议议程</a>
-    <a href="" target="_blank">高清大图</a>
-    <a href="" target="_blank">嘉宾观点</a>
-    <a href="" target="_blank">案例展示</a>
-    <a href="" target="_blank">图文直播</a>
-    <a href="" target="_blank">相关文章</a>
+    <a href="#hyyc">会议议程</a>
+    <a href="#gqdt">高清大图</a>
+    <a href="#jbgd">嘉宾观点</a>
+    <a href="#alzs">案例展示</a>
+    <a href="#twzb">图文直播</a>
+    <a href="#xgwz">相关文章</a>
   </div>
 </template>
 
@@ -19,10 +19,6 @@ a:link,a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  color: #c00;
-  text-decoration: underline;
-}
 .nav, .nav a:link, .nav a:visited, .nav a:hover {
   color: #fff;
 }
@@ -36,7 +32,10 @@ a:hover {
 }
 
 .nav a {
-  margin: 0 10px;
+  padding: 0 14px;
 }
-
+.nav a:hover {
+  color: #0f3677;
+  background-color: white;
+}
 </style>
